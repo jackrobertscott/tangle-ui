@@ -8,5 +8,5 @@ export const Root = createComponent(() => {
 })
 
 const RootWrapper = Divider.extend({
-  padding: 50,
+  padding: 100,
 })
