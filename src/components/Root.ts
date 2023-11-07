@@ -3,7 +3,7 @@ import { Divider } from "./Static"
 
 export const Root = createComponent(() => {
   return RootWrapper({
-    children: "Hello, World!",
+    children: "Hello, Bob!",
   })
 })
 
