@@ -1,17 +1,39 @@
 # reactangle-ui
 
+Super basic. Super boring.
+
 There should be a minimum number of components. Otherwise it would be preferable to use an external UI library like Mantine. The goal of these UI elements is to make it easy to build software with AI.
 
-**Code grouped by output files:**
+## Actual AI Files
 
-- [ ] Dashboard
+- Router
+- Page
+- List
+- Create
+- Read/Update
+- Delete
+- Graph
+
+Future:
+
+- Web
+- Csv
+- Pdf
+
+## Min UI Required
+
+Do *NOT* design from scratch > Copy from existing codebases.
+
+- [ ] Shell
   - [ ] Auth
+- [ ] Dashboard
   - [ ] Sidebar
-  - [ ] Page with heading
-- [ ] Display lists of data
+  - [ ] Page
+- [ ] List
   - [x] Table
   - [ ] Gallery
-- [ ] Create & update forms
+  - [ ] Kanban
+- [ ] Form
   - [ ] Modal
   - [ ] Section (form)
   - [ ] Inputs
