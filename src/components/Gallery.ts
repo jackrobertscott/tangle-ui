@@ -1,7 +1,6 @@
 import { border, hsla } from "css-brewery"
-import { createComponent } from "../utils/component"
+import { createComponent, createStaticComponent } from "../utils/component"
 import { fib } from "../utils/fib"
-import { Divider } from "./Static"
 
 export const Gallery = createComponent(() => {
   return GalleryGrid({
@@ -11,7 +10,7 @@ export const Gallery = createComponent(() => {
   })
 })
 
-const GalleryGrid = Divider.extend({
+const GalleryGrid = createStaticComponent("div", {
   border: border({ width: 1, color: hsla({ l: 100 }) }).toString(),
   display: "grid",
   gridTemplateRows: "auto",
@@ -19,7 +18,7 @@ const GalleryGrid = Divider.extend({
   gap: 10,
 })
 
-const GalleryBox = Divider.extend({
+const GalleryBox = createStaticComponent("div", {
   backgroundColor: "green",
   aspectRatio: "16 / 9",
 })

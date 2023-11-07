@@ -1,12 +1,7 @@
-import { createComponent } from "../utils/component"
-import { Divider } from "./Static"
+import { createStaticComponent } from "../utils/component"
+import { fib } from "../utils/fib"
 
-export const Root = createComponent(() => {
-  return RootWrapper({
-    children: "Hello, Bob!",
-  })
-})
-
-const RootWrapper = Divider.extend({
-  padding: 100,
+export const Root = createStaticComponent("div", {
+  padding: fib(8),
+  overflow: "auto",
 })

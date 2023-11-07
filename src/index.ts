@@ -1,6 +1,5 @@
 export * from "./components/Gallery"
 export * from "./components/Root"
-export * from "./components/Static"
 export * from "./components/Table"
 
 export * from "./utils/component"
