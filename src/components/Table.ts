@@ -10,46 +10,55 @@ export type TableProps = {
 
 export const Table = createComponent<TableProps>(({ head, body }) => {
   return TableWrap([
-    TableRoot([
-      TableHead([
-        TableRow({
-          children: head.map((data) => {
-            return TableHeader(data)
+    TableScrollWrap([
+      TableRoot([
+        TableHead([
+          TableRow({
+            children: head.map((data) => {
+              return TableHeader(data)
+            }),
+          }),
+        ]),
+        TableBody({
+          children: body.map((row) => {
+            return TableRow({
+              children: row.map((data) => {
+                return TableData(data)
+              }),
+            })
           }),
         }),
       ]),
-      TableBody({
-        children: body.map((row) => {
-          return TableRow({
-            children: row.map((data) => {
-              return TableData(data)
-            }),
-          })
-        }),
-      }),
     ]),
   ])
 })
 
-export const TableWrap = createStaticComponent("div", () => {
+const TableWrap = createStaticComponent("div", () => {
   const theme = getTheme()
   return {
+    display: "flex",
+    flexDirection: "column",
     overflow: "auto",
-    textAlign: "left",
+    borderRadius: fib(5),
     border: theme.border.outer.toString(),
-    maxHeight: fib(14),
   }
 })
 
-export const TableRoot = createStaticComponent("table", {
-  width: "100%",
+const TableScrollWrap = createStaticComponent("div", {
+  overflow: "auto",
 })
 
-export const TableHead = createStaticComponent("thead")
+const TableRoot = createStaticComponent("table", {
+  minWidth: "100%",
+  textAlign: "left",
+  maxHeight: fib(14),
+})
 
-export const TableBody = createStaticComponent("tbody")
+const TableHead = createStaticComponent("thead")
 
-export const TableRow = createStaticComponent("tr", () => {
+const TableBody = createStaticComponent("tbody")
+
+const TableRow = createStaticComponent("tr", () => {
   const theme = getTheme()
   return {
     ":not(:last-child) td": {
@@ -61,7 +70,7 @@ export const TableRow = createStaticComponent("tr", () => {
   }
 })
 
-export const TableData = createStaticComponent("td", () => {
+const TableData = createStaticComponent("td", () => {
   const theme = getTheme()
   return [
     tableCellCss(),
@@ -75,7 +84,7 @@ export const TableData = createStaticComponent("td", () => {
   ]
 })
 
-export const TableHeader = createStaticComponent("th", () => {
+const TableHeader = createStaticComponent("th", () => {
   const theme = getTheme()
   return [
     tableCellCss(),
