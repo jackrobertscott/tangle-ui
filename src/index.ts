@@ -1,6 +1,6 @@
-export * from "./components/Gallery"
-export * from "./components/Root"
-export * from "./components/Table"
+export * from "./components/container/Shell"
+export * from "./components/display/Gallery"
+export * from "./components/display/Table"
 
 export * from "./utils/component"
 export * from "./utils/element"

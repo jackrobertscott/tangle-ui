@@ -1,6 +1,6 @@
 import { border, hsla } from "css-brewery"
-import { createComponent, createStaticComponent } from "../utils/component"
-import { fib } from "../utils/fib"
+import { createComponent, createStaticComponent } from "../../utils/component"
+import { fib } from "../../utils/fib"
 
 export const Gallery = createComponent(() => {
   return GalleryGrid({

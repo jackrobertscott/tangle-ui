@@ -1,7 +1,7 @@
 import { CSSObject } from "@emotion/css"
-import { createComponent, createStaticComponent } from "../utils/component"
-import { fib } from "../utils/fib"
-import { getTheme } from "../utils/theme"
+import { createComponent, createStaticComponent } from "../../utils/component"
+import { fib } from "../../utils/fib"
+import { getTheme } from "../../utils/theme"
 
 export type TableProps = {
   head: string[]
