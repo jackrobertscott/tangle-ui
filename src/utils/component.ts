@@ -1,6 +1,7 @@
 import { CSSInterpolation, css } from "@emotion/css"
 import { FC, ReactNode } from "react"
 import { ElementProps, createElement } from "./element"
+import { ThemeType, getTheme } from "./theme"
 
 type PropsOrChildrenType<T> = ElementProps<T> extends infer R
   ? R extends { children?: ReactNode }
@@ -8,7 +9,9 @@ type PropsOrChildrenType<T> = ElementProps<T> extends infer R
     : R
   : never
 
-type StaticCssValueType = (() => CSSInterpolation) | CSSInterpolation
+type StaticCssValueType =
+  | ((theme: ThemeType) => CSSInterpolation)
+  | CSSInterpolation
 
 const convertChildrenProps = (props: any): any => {
   return typeof props === "object" && props !== null && !Array.isArray(props)
@@ -28,17 +31,18 @@ export function createStaticComponent<T extends string>(
   tag: T,
   cssValue: StaticCssValueType = {}
 ) {
-  const cssObject = typeof cssValue === "function" ? cssValue() : cssValue
-  const staticClass = css(cssObject)
+  const cssRaw =
+    typeof cssValue === "function" ? cssValue(getTheme()) : cssValue
+  const staticClass = css(cssRaw)
   const component = function (props?: PropsOrChildrenType<typeof tag>) {
     const newProps = convertChildrenProps(props)
     appendPropsClass(newProps, staticClass)
     return createElement(tag, newProps)
   }
   component.extend = function (extendValue: StaticCssValueType) {
-    const extendObject =
-      typeof extendValue === "function" ? extendValue() : extendValue
-    return createStaticComponent(tag, [cssObject, extendObject])
+    const extendCssRaw =
+      typeof extendValue === "function" ? extendValue(getTheme()) : extendValue
+    return createStaticComponent(tag, [cssRaw, extendCssRaw])
   }
   return component
 }

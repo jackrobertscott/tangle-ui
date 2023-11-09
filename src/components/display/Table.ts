@@ -1,7 +1,7 @@
 import { CSSObject } from "@emotion/css"
 import { createComponent, createStaticComponent } from "../../utils/component"
 import { fib } from "../../utils/fib"
-import { getTheme } from "../../utils/theme"
+import { ThemeType } from "../../utils/theme"
 
 export type TableProps = {
   head: string[]
@@ -33,16 +33,13 @@ export const Table = createComponent<TableProps>(({ head, body }) => {
   ])
 })
 
-const TableWrap = createStaticComponent("div", () => {
-  const theme = getTheme()
-  return {
-    display: "flex",
-    flexDirection: "column",
-    overflow: "auto",
-    borderRadius: fib(5),
-    border: theme.border.outer.toString(),
-  }
-})
+const TableWrap = createStaticComponent("div", (theme) => ({
+  display: "flex",
+  flexDirection: "column",
+  overflow: "auto",
+  borderRadius: fib(5),
+  border: theme.border.outer.toString(),
+}))
 
 const TableScrollWrap = createStaticComponent("div", {
   overflow: "auto",
@@ -58,47 +55,37 @@ const TableHead = createStaticComponent("thead")
 
 const TableBody = createStaticComponent("tbody")
 
-const TableRow = createStaticComponent("tr", () => {
-  const theme = getTheme()
-  return {
-    ":not(:last-child) td": {
-      borderBottom: theme.border.inner.toString(),
-    },
-    ":nth-child(2n) td": {
-      backgroundColor: theme.bg.table.shift(5).toString(),
-    },
-  }
-})
+const TableRow = createStaticComponent("tr", (theme) => ({
+  ":not(:last-child) td": {
+    borderBottom: theme.border.inner.toString(),
+  },
+  ":nth-child(2n) td": {
+    backgroundColor: theme.bg.cell.shift(5).toString(),
+  },
+}))
 
-const TableData = createStaticComponent("td", () => {
-  const theme = getTheme()
-  return [
-    tableCellCss(),
-    {
-      color: theme.fg.secondary.toString(),
-      backgroundColor: theme.bg.table.toString(),
-      "&.clickable:hover:not(:active)": {
-        backgroundColor: theme.bg.table.shift(5).toString(),
-      },
+const TableData = createStaticComponent("td", (theme) => [
+  tableCellCss(theme),
+  {
+    color: theme.fg.secondary.toString(),
+    backgroundColor: theme.bg.cell.toString(),
+    "&.clickable:hover:not(:active)": {
+      backgroundColor: theme.bg.cell.shift(5).toString(),
     },
-  ]
-})
+  },
+])
 
-const TableHeader = createStaticComponent("th", () => {
-  const theme = getTheme()
-  return [
-    tableCellCss(),
-    {
-      top: 0,
-      position: "sticky",
-      borderBottom: theme.border.inner.toString(),
-      backgroundColor: theme.bg.table.shift(10).toString(),
-    },
-  ]
-})
+const TableHeader = createStaticComponent("th", (theme) => [
+  tableCellCss(theme),
+  {
+    top: 0,
+    position: "sticky",
+    borderBottom: theme.border.inner.toString(),
+    backgroundColor: theme.bg.cell.shift(10).toString(),
+  },
+])
 
-function tableCellCss(): CSSObject {
-  const theme = getTheme()
+function tableCellCss(theme: ThemeType): CSSObject {
   return {
     padding: fib(6),
     minWidth: fib(11),
