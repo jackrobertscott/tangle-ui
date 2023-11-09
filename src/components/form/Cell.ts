@@ -1,6 +1,6 @@
-import { css } from "@emotion/css"
 import { ReactNode } from "react"
 import { createComponent, createCssComponent } from "../../utils/component"
+import { getTheme } from "../../utils/theme"
 import { Icon } from "../display/Icon"
 
 export const Cell = createComponent<{
@@ -19,8 +19,10 @@ export const Cell = createComponent<{
     style: {
       flexGrow: hug ? undefined : 1,
       justifyContent: centered ? "center" : "space-between",
+      backgroundColor: disabled
+        ? getTheme().bg.cell.adjust({ l: -5 }).toString()
+        : undefined,
     },
-    class: [disabled ? disabledClass : undefined],
   })
 })
 
@@ -31,7 +33,3 @@ const CellWrap = createCssComponent("div", (theme) => ({
   padding: theme.padding.cell,
   gap: theme.padding.cell,
 }))
-
-const disabledClass = css({
-  // todo
-})

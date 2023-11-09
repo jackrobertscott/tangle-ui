@@ -1,4 +1,4 @@
-import { CSSInterpolation, css } from "@emotion/css"
+import { css } from "@emotion/css"
 import React, {
   Attributes,
   ComponentClass,
@@ -11,7 +11,7 @@ import React, {
 } from "react"
 
 type CSSProps<T extends {}> = Omit<T, "class" | "className" | "css"> & {
-  css?: CSSInterpolation
+  // css?: CSSInterpolation // bad practise
   class?: string | (string | undefined | null)[]
   ref?: LegacyRef<any>
 }
