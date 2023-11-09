@@ -1,5 +1,6 @@
 {
   "name": "reactangle-ui",
+  "description": "Super simple React UI library.",
   "version": "0.4.1",
   "author": "Jack Scott",
   "license": "MIT",
@@ -10,6 +11,10 @@
     "readme.md",
     "clean.css"
   ],
+  "repository": {
+    "type": "git",
+    "url": "https://github.com/jackrobertscott/reactangle-ui"
+  },
   "scripts": {
     "build": "tsc",
     "clean": "rm -rf dist/*",
