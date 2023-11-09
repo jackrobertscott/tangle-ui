@@ -1,4 +1,4 @@
-import { ReactNode } from "react"
+import { MouseEventHandler, ReactNode } from "react"
 import { createComponent, createCssComponent } from "../../utils/component"
 import { getTheme } from "../../utils/theme"
 import { Icon } from "../display/Icon"
@@ -9,7 +9,7 @@ export const Cell = createComponent<{
   children?: ReactNode
   hug?: boolean
   centered?: boolean
-  onClick?: () => void
+  onClick?: MouseEventHandler<HTMLDivElement>
   disabled?: boolean
   secondary?: boolean
 }>(({ icon, label, children, hug, centered, onClick, disabled, secondary }) => {

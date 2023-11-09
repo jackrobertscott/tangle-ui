@@ -3,6 +3,9 @@ import { fib } from "./fib"
 import { createSignal } from "./signal"
 
 export const [getTheme, setTheme] = createSignal({
+  line: {
+    regular: 1.5,
+  },
   fg: {
     primary: hsla({ l: 100, a: 1 }),
     secondary: hsla({ l: 100, a: 0.7 }),
@@ -27,6 +30,8 @@ export const [getTheme, setTheme] = createSignal({
   },
   radius: {
     cell: fib(5),
+    tiny: fib(4),
+    micro: fib(3),
   },
   shadow: {
     outer: shadow({

@@ -1,29 +1,45 @@
 import { CSSObject } from "@emotion/css"
+import { MouseEventHandler } from "react"
 import { createComponent, createCssComponent } from "../../utils/component"
 import { fib } from "../../utils/fib"
 import { ThemeType } from "../../utils/theme"
 
-export type TableProps = {
+export const Table = createComponent<{
   head: string[]
-  body: string[][]
-}
-
-export const Table = createComponent<TableProps>(({ head, body }) => {
+  body: (string | { label: string; onClick?: MouseEventHandler })[][]
+  centered?: boolean
+}>(({ head, body, centered }) => {
   return TableWrap([
     TableScrollWrap([
       TableRoot([
-        TableHead([
-          TableRow({
-            children: head.map((data) => {
-              return TableHeader(data)
+        TableHead({
+          style: { textAlign: centered ? "center" : undefined },
+          children: [
+            TableRow({
+              children: head.map((data) => {
+                return TableHeader(data)
+              }),
             }),
-          }),
-        ]),
+          ],
+        }),
         TableBody({
           children: body.map((row) => {
             return TableRow({
               children: row.map((data) => {
-                return TableData(data)
+                const style = {
+                  textAlign: centered ? "center" : undefined,
+                } as const
+                if (typeof data === "string") {
+                  return TableData({
+                    style,
+                    children: data,
+                  })
+                }
+                return TableData({
+                  style,
+                  children: data.label,
+                  onClick: data.onClick,
+                })
               }),
             })
           }),
