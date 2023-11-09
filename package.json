@@ -1,6 +1,6 @@
 {
   "name": "reactangle-ui",
-  "version": "0.3.0",
+  "version": "0.4.1",
   "author": "Jack Scott",
   "license": "MIT",
   "main": "dist/index.js",
