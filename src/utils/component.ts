@@ -1,9 +1,9 @@
 import { CSSInterpolation, css } from "@emotion/css"
 import { FC, ReactNode } from "react"
-import { ElementProps, createElement } from "./element"
+import { ComponentProps, createElement } from "./element"
 import { ThemeType, getTheme } from "./theme"
 
-type PropsOrChildrenType<T> = ElementProps<T> extends infer R
+type PropsOrChildrenType<T> = ComponentProps<T> extends infer R
   ? R extends { children?: ReactNode }
     ? R | ReactNode
     : R

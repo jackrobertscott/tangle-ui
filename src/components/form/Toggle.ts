@@ -1,4 +1,4 @@
-import { bgHoverCss, clickableCss } from "../../utils/commonCss"
+import { bgHoverClass, clickableClass } from "../../utils/commonCss"
 import { createComponent, createCssComponent } from "../../utils/component"
 
 export const Toggle = createComponent<{
@@ -15,8 +15,8 @@ export const Toggle = createComponent<{
 })
 
 const ToggleWrap = createCssComponent("div", (theme) => [
-  clickableCss(),
-  bgHoverCss(theme.bg.cell),
+  clickableClass(),
+  bgHoverClass(theme.bg.cell),
   {
     flexGrow: 1,
     justifyContent: "start",

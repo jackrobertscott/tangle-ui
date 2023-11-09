@@ -29,6 +29,7 @@ export const [getTheme, setTheme] = createSignal({
     form: fib(7),
   },
   radius: {
+    large: fib(6),
     cell: fib(5),
     tiny: fib(4),
     micro: fib(3),

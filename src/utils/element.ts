@@ -16,7 +16,7 @@ type CSSProps<T extends {}> = Omit<T, "class" | "className" | "css"> & {
   ref?: LegacyRef<any>
 }
 
-export type ElementProps<T> = T extends keyof HTMLElementTagNameMap
+export type ComponentProps<T> = T extends keyof HTMLElementTagNameMap
   ? CSSProps<HTMLProps<HTMLElementTagNameMap[T]>>
   : T extends keyof SVGElementTagNameMap
   ? CSSProps<SVGProps<SVGElementTagNameMap[T]>>
@@ -30,9 +30,9 @@ export function createElement<
   T extends string | FC<any> | ComponentClass<any, any>
 >(
   tag: T,
-  props?: ElementProps<T> | null,
+  props?: ComponentProps<T> | null,
   ...children: ReactNode[]
-): ReactElement<ElementProps<T>> {
+): ReactElement<ComponentProps<T>> {
   if (props) {
     if (typeof tag === "string") {
       props.className = (props.css ? [css(props.css)] : [])

@@ -32,14 +32,14 @@ Do *NOT* design from scratch > Copy from existing codebases.
 - [ ] List
   - [x] Table
   - [ ] Gallery
-  - [ ] Kanban
+  - [ ] List
 - [ ] Form
   - [ ] Modal
   - [ ] Section (form)
   - [ ] Inputs
-    - [ ] Text (string)
-    - [ ] Number
-    - [ ] Switch (boolean)
-    - [ ] Select (enum)
-    - [ ] Date
+    - [x] Text (string)
+    - [x] Number
+    - [x] Switch (boolean)
+    - [x] Select (enum)
+    - [x] Date
     - [ ] Select (relation)
