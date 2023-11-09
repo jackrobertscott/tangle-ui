@@ -1,5 +1,5 @@
 import { border, hsla } from "css-brewery"
-import { createComponent, createStaticComponent } from "../../utils/component"
+import { createComponent, createCssComponent } from "../../utils/component"
 import { fib } from "../../utils/fib"
 
 export const Gallery = createComponent(() => {
@@ -10,7 +10,7 @@ export const Gallery = createComponent(() => {
   })
 })
 
-const GalleryWrap = createStaticComponent("div", {
+const GalleryWrap = createCssComponent("div", {
   border: border({ width: 1, color: hsla({ l: 100 }) }).toString(),
   display: "grid",
   gridTemplateRows: "auto",
@@ -18,7 +18,7 @@ const GalleryWrap = createStaticComponent("div", {
   gap: 10,
 })
 
-const GalleryCard = createStaticComponent("div", {
+const GalleryCard = createCssComponent("div", {
   backgroundColor: "green",
   aspectRatio: "16 / 9",
 })

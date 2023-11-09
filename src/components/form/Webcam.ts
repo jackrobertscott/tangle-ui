@@ -1,4 +1,4 @@
-import { createComponent, createStaticComponent } from "../../utils/component"
+import { createComponent, createCssComponent } from "../../utils/component"
 
 export const Webcam = createComponent(() => {
   return WebcamWrap([
@@ -6,4 +6,4 @@ export const Webcam = createComponent(() => {
   ])
 })
 
-const WebcamWrap = createStaticComponent("div")
+const WebcamWrap = createCssComponent("div")

@@ -1,4 +1,4 @@
-import { createComponent, createStaticComponent } from "../../utils/component"
+import { createComponent, createCssComponent } from "../../utils/component"
 
 export const Numeral = createComponent(() => {
   return NumeralWrap([
@@ -6,4 +6,4 @@ export const Numeral = createComponent(() => {
   ])
 })
 
-const NumeralWrap = createStaticComponent("div")
+const NumeralWrap = createCssComponent("div")

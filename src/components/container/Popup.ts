@@ -1,6 +1,6 @@
 import { Fragment, ReactNode, useEffect, useRef, useState } from "react"
 import { useLayer } from "../../hooks/useLayer"
-import { createComponent, createStaticComponent } from "../../utils/component"
+import { createComponent, createCssComponent } from "../../utils/component"
 import { listenerService } from "../../utils/listenerService"
 import { Portal } from "./Portal"
 
@@ -53,7 +53,7 @@ export const Popup = createComponent<{
   })
 })
 
-const PopupWrap = createStaticComponent("div", (theme) => ({
+const PopupWrap = createCssComponent("div", (theme) => ({
   zIndex: 100,
   overflow: "auto",
   position: "absolute",
@@ -62,7 +62,7 @@ const PopupWrap = createStaticComponent("div", (theme) => ({
   border: theme.border.outer.toString(),
 }))
 
-const PopupContent = createStaticComponent("div", (theme) => ({
+const PopupContent = createCssComponent("div", (theme) => ({
   overflow: "auto",
   backgroundColor: theme.border.outer.color.toString(),
   gap: theme.border.inner.width,

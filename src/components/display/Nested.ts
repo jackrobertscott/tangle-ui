@@ -1,4 +1,4 @@
-import { createComponent, createStaticComponent } from "../../utils/component"
+import { createComponent, createCssComponent } from "../../utils/component"
 
 export const Nested = createComponent(() => {
   return NestedWrap([
@@ -6,4 +6,4 @@ export const Nested = createComponent(() => {
   ])
 })
 
-const NestedWrap = createStaticComponent("div")
+const NestedWrap = createCssComponent("div")

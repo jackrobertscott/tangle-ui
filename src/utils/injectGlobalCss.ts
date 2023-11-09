@@ -3,7 +3,7 @@ import { shadow } from "css-brewery"
 import { fib } from "./fib"
 import { getTheme } from "./theme"
 
-export function applyGlobalCss() {
+export function injectGlobalCss() {
   const theme = getTheme()
   injectGlobal({
     "::-webkit-scrollbar": {

@@ -1,4 +1,4 @@
-import { createComponent, createStaticComponent } from "../../utils/component"
+import { createComponent, createCssComponent } from "../../utils/component"
 
 export const Toggle = createComponent(() => {
   return ToggleWrap([
@@ -6,4 +6,4 @@ export const Toggle = createComponent(() => {
   ])
 })
 
-const ToggleWrap = createStaticComponent("div")
+const ToggleWrap = createCssComponent("div")

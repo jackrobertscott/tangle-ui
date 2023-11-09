@@ -10,7 +10,7 @@ import React, {
   SVGProps,
 } from "react"
 
-type CSSProps<T extends {}> = Omit<T, "class" | "css"> & {
+type CSSProps<T extends {}> = Omit<T, "class" | "className" | "css"> & {
   css?: CSSInterpolation
   class?: string | (string | undefined | null)[]
   ref?: LegacyRef<any>

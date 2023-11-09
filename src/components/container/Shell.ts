@@ -1,5 +1,5 @@
 import { ReactNode } from "react"
-import { createComponent, createStaticComponent } from "../../utils/component"
+import { createComponent, createCssComponent } from "../../utils/component"
 import { fib } from "../../utils/fib"
 import { getTheme } from "../../utils/theme"
 
@@ -9,7 +9,7 @@ export const Shell = createComponent<{
   return ShellWrap([children])
 })
 
-const ShellWrap = createStaticComponent("div", {
+const ShellWrap = createCssComponent("div", {
   padding: fib(8),
   flexGrow: 1,
   display: "flex",

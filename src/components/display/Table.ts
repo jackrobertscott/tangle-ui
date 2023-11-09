@@ -1,5 +1,5 @@
 import { CSSObject } from "@emotion/css"
-import { createComponent, createStaticComponent } from "../../utils/component"
+import { createComponent, createCssComponent } from "../../utils/component"
 import { fib } from "../../utils/fib"
 import { ThemeType } from "../../utils/theme"
 
@@ -33,7 +33,7 @@ export const Table = createComponent<TableProps>(({ head, body }) => {
   ])
 })
 
-const TableWrap = createStaticComponent("div", (theme) => ({
+const TableWrap = createCssComponent("div", (theme) => ({
   display: "flex",
   flexDirection: "column",
   overflow: "auto",
@@ -41,21 +41,21 @@ const TableWrap = createStaticComponent("div", (theme) => ({
   border: theme.border.outer.toString(),
 }))
 
-const TableScrollWrap = createStaticComponent("div", {
+const TableScrollWrap = createCssComponent("div", {
   overflow: "auto",
 })
 
-const TableRoot = createStaticComponent("table", {
+const TableRoot = createCssComponent("table", {
   minWidth: "100%",
   textAlign: "left",
   maxHeight: fib(14),
 })
 
-const TableHead = createStaticComponent("thead")
+const TableHead = createCssComponent("thead")
 
-const TableBody = createStaticComponent("tbody")
+const TableBody = createCssComponent("tbody")
 
-const TableRow = createStaticComponent("tr", (theme) => ({
+const TableRow = createCssComponent("tr", (theme) => ({
   ":not(:last-child) td": {
     borderBottom: theme.border.inner.toString(),
   },
@@ -64,7 +64,7 @@ const TableRow = createStaticComponent("tr", (theme) => ({
   },
 }))
 
-const TableData = createStaticComponent("td", (theme) => [
+const TableData = createCssComponent("td", (theme) => [
   tableCellCss(theme),
   {
     color: theme.fg.secondary.toString(),
@@ -75,7 +75,7 @@ const TableData = createStaticComponent("td", (theme) => [
   },
 ])
 
-const TableHeader = createStaticComponent("th", (theme) => [
+const TableHeader = createCssComponent("th", (theme) => [
   tableCellCss(theme),
   {
     top: 0,

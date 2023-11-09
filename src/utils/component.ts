@@ -27,7 +27,7 @@ const appendPropsClass = (props: any, staticClass: string) => {
     : staticClass
 }
 
-export function createStaticComponent<T extends string>(
+export function createCssComponent<T extends string>(
   tag: T,
   cssValue: StaticCssValueType = {}
 ) {
@@ -42,7 +42,7 @@ export function createStaticComponent<T extends string>(
   component.extend = function (extendValue: StaticCssValueType) {
     const extendCssRaw =
       typeof extendValue === "function" ? extendValue(getTheme()) : extendValue
-    return createStaticComponent(tag, [cssRaw, extendCssRaw])
+    return createCssComponent(tag, [cssRaw, extendCssRaw])
   }
   return component
 }

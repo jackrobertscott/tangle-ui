@@ -1,4 +1,4 @@
-import { createComponent, createStaticComponent } from "../../utils/component"
+import { createComponent, createCssComponent } from "../../utils/component"
 
 export const Chat = createComponent(() => {
   return ChatWrap([
@@ -6,4 +6,4 @@ export const Chat = createComponent(() => {
   ])
 })
 
-const ChatWrap = createStaticComponent("div")
+const ChatWrap = createCssComponent("div")

@@ -1,4 +1,4 @@
-import { createComponent, createStaticComponent } from "../../utils/component"
+import { createComponent, createCssComponent } from "../../utils/component"
 import { createElement } from "../../utils/element"
 
 export const Icon = createComponent<{ icon: string }>(({ icon }) => {
@@ -16,7 +16,7 @@ export const Icon = createComponent<{ icon: string }>(({ icon }) => {
   })
 })
 
-const IconWrap = createStaticComponent("div", {
+const IconWrap = createCssComponent("div", {
   cursor: "default",
   userSelect: "none",
   alignItems: "center",
@@ -24,7 +24,7 @@ const IconWrap = createStaticComponent("div", {
   textAlign: "center",
 })
 
-const IconSvg = createStaticComponent("svg", {
+const IconSvg = createCssComponent("svg", {
   fill: "currentcolor",
   stroke: "transparent",
 })

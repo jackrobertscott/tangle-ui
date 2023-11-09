@@ -1,4 +1,4 @@
-import { createComponent, createStaticComponent } from "../../utils/component"
+import { createComponent, createCssComponent } from "../../utils/component"
 
 export const Radio = createComponent(() => {
   return RadioWrap([
@@ -6,4 +6,4 @@ export const Radio = createComponent(() => {
   ])
 })
 
-const RadioWrap = createStaticComponent("div")
+const RadioWrap = createCssComponent("div")

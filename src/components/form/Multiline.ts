@@ -1,4 +1,4 @@
-import { createComponent, createStaticComponent } from "../../utils/component"
+import { createComponent, createCssComponent } from "../../utils/component"
 
 export const Multiline = createComponent(() => {
   return MultilineWrap([
@@ -6,4 +6,4 @@ export const Multiline = createComponent(() => {
   ])
 })
 
-const MultilineWrap = createStaticComponent("div")
+const MultilineWrap = createCssComponent("div")

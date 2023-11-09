@@ -1,5 +1,5 @@
 import { ReactNode } from "react"
-import { createComponent, createStaticComponent } from "../../utils/component"
+import { createComponent, createCssComponent } from "../../utils/component"
 
 export const Page = createComponent<{
   title?: string
@@ -8,8 +8,8 @@ export const Page = createComponent<{
   return PageWrap([PageHead([title]), PageBody([children])])
 })
 
-const PageWrap = createStaticComponent("div")
+const PageWrap = createCssComponent("div")
 
-const PageHead = createStaticComponent("div")
+const PageHead = createCssComponent("div")
 
-const PageBody = createStaticComponent("div")
+const PageBody = createCssComponent("div")

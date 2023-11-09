@@ -1,4 +1,4 @@
-import { createComponent, createStaticComponent } from "../../utils/component"
+import { createComponent, createCssComponent } from "../../utils/component"
 
 export const FilePicker = createComponent(() => {
   return FilePickerWrap([
@@ -6,4 +6,4 @@ export const FilePicker = createComponent(() => {
   ])
 })
 
-const FilePickerWrap = createStaticComponent("div")
+const FilePickerWrap = createCssComponent("div")

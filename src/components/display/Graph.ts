@@ -1,4 +1,4 @@
-import { createComponent, createStaticComponent } from "../../utils/component"
+import { createComponent, createCssComponent } from "../../utils/component"
 
 export const Graph = createComponent(() => {
   return GraphWrap([
@@ -6,4 +6,4 @@ export const Graph = createComponent(() => {
   ])
 })
 
-const GraphWrap = createStaticComponent("div")
+const GraphWrap = createCssComponent("div")

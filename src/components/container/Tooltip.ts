@@ -1,5 +1,5 @@
 import { ReactNode, useState } from "react"
-import { createComponent, createStaticComponent } from "../../utils/component"
+import { createComponent, createCssComponent } from "../../utils/component"
 import { fib } from "../../utils/fib"
 import { Fragment } from "./Fragment"
 
@@ -37,14 +37,14 @@ export const Tooltip = createComponent<{
   })
 })
 
-const TooltipWrap = createStaticComponent("div", (theme) => ({
+const TooltipWrap = createCssComponent("div", (theme) => ({
   position: "absolute",
   justifyContent: "center",
   pointerEvents: "none",
   backgroundColor: theme.bg.inverted.toString(),
 }))
 
-const TooltipLabel = createStaticComponent("div", (theme) => ({
+const TooltipLabel = createCssComponent("div", (theme) => ({
   left: "100%",
   position: "absolute",
   marginLeft: fib(6),

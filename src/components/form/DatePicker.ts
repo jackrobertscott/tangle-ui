@@ -1,4 +1,4 @@
-import { createComponent, createStaticComponent } from "../../utils/component"
+import { createComponent, createCssComponent } from "../../utils/component"
 
 export const DatePicker = createComponent(() => {
   return DatePickerWrap([
@@ -6,4 +6,4 @@ export const DatePicker = createComponent(() => {
   ])
 })
 
-const DatePickerWrap = createStaticComponent("div")
+const DatePickerWrap = createCssComponent("div")

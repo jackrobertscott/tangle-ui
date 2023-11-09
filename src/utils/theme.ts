@@ -23,6 +23,7 @@ export const [getTheme, setTheme] = createSignal({
   },
   padding: {
     cell: fib(6),
+    form: fib(7),
   },
   radius: {
     cell: fib(5),

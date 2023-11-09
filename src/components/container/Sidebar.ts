@@ -1,4 +1,4 @@
-import { createComponent, createStaticComponent } from "../../utils/component"
+import { createComponent, createCssComponent } from "../../utils/component"
 
 export const Sidebar = createComponent(() => {
   return SidebarWrap([
@@ -6,4 +6,4 @@ export const Sidebar = createComponent(() => {
   ])
 })
 
-const SidebarWrap = createStaticComponent("div")
+const SidebarWrap = createCssComponent("div")
