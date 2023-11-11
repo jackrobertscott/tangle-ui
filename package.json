@@ -1,5 +1,5 @@
 {
-  "name": "reactangle-ui",
+  "name": "tangle-ui",
   "description": "Super simple React UI library.",
   "version": "0.4.1",
   "author": "Jack Scott",
@@ -13,7 +13,7 @@
   ],
   "repository": {
     "type": "git",
-    "url": "https://github.com/jackrobertscott/reactangle-ui"
+    "url": "https://github.com/jackrobertscott/tangle-ui"
   },
   "scripts": {
     "build": "tsc",
